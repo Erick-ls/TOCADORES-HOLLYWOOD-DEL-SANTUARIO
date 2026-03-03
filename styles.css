@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 30px 0;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+nav a:hover,
+nav .active {
+    color: #2f5aa8;
+    border-bottom: 2px solid #2f5aa8;
+}
+
+/* GRID */
+.productos {
+    width: 90%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.info {
+    padding: 20px;
+}
+
+.info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.precio {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* BOTÓN */
+.btn-wsp {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #2f5aa8, #3d74d6);
+    transition: all 0.4s ease;
+}
+
+/* Animación hover */
+.btn-wsp:hover {
+    background: linear-gradient(135deg, #1d3f7a, #2f5aa8);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(47, 90, 168, 0.4);
+}
+
+/* Efecto al hacer click */
+.btn-wsp:active {
+    transform: scale(0.95);
+}
