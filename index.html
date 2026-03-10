@@ -8,15 +8,19 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="app.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Tocadores Hollywood de Santuario</h1>
+        <h1>
+            Tocadores <span class="gold">Hollywood</span>
+            <span class="subtitle">Felicidad en tu hogar</span>
+        </h1>
         <nav>
             <a class="active" href="#">Inicio</a>
-            <a href="contacto.html">Contacto</a>
+            <!-- <a href="contacto.html">Contacto</a> -->
         </nav>
     </header>
 
@@ -109,6 +113,136 @@
                                 </div>
 
     </section>
+
+    <!-- POPUP COMBO -->
+    <div class="popup-overlay" id="comboPopup">
+        <div class="popup-box" id="comboBox">
+    
+            <div class="popup-header">
+                <span class="combo-label">✦ Oferta Especial · Combo Exclusivo</span>
+                <button class="popup-close" id="popupClose" aria-label="Cerrar">&#x2715;</button>
+            </div>
+    
+            <div class="popup-slider">
+                <div class="popup-slide active">
+                    <img src="img/WhatsApp Image 2026-03-01 at 4.02.55 PM.jpeg" alt="Producto 1">
+                    <span class="popup-slide-tag">Tocador Hollywood Pro</span>
+                </div>
+                <div class="popup-slide">
+                    <img src="img/WhatsApp Image 2026-03-01 at 4.02.52 PM.jpeg" alt="Producto 2">
+                    <span class="popup-slide-tag">Silla Hollywood Glam</span>
+                </div>
+                <div class="popup-dots">
+                    <span class="popup-dot active" data-index="0"></span>
+                    <span class="popup-dot" data-index="1"></span>
+                </div>
+            </div>
+    
+            <div class="popup-body">
+                <div class="popup-text">
+                    <h2>Combo <em>Hollywood</em> Completo</h2>
+                    <p>Transforma tu espacio con este dúo diseñado para brillar. Tocador + silla a juego, disponibilidad
+                        limitada.</p>
+                    <ul class="popup-items">
+                        <li>Tocador Hollywood Pro con espejo LED</li>
+                        <li>Silla tapizada Hollywood Glam</li>
+                        <li>Envío gratis a todo Colombia</li>
+                        <li>Garantía de 12 meses incluida</li>
+                    </ul>
+                </div>
+    
+                <div class="popup-cta">
+                    <div class="popup-price-box">
+                        <span class="popup-price-old">$1.800.000</span>
+                        <div class="popup-price-new">$1.290.000</div>
+                    </div>
+                    <span class="popup-badge">AHORRA 28%</span>
+                    <button class="popup-btn-wsp" id="popupWsp">
+                        <i class="fab fa-whatsapp"></i> Pedir Combo
+                    </button>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    <footer class="footer">
+
+        <div class="footer-social">
+            <h2>Síguenos @tocadoreshollywood</h2>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="footer-container">
+
+            <div class="footer-col">
+                <h3>LÍNEA DE ATENCIÓN</h3>
+                <p>Teléfono: +1 323 320 5256</p>
+                <p>Whatsapp: +1 323 320 5256</p>
+
+                <h4>UBICACIÓN</h4>
+                <p>Santuario, Colombia</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>INFORMACIÓN</h3>
+                <a href="#">Ofertas vigentes</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Garantía</a>
+                <a href="#">Preguntas frecuentes</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>SOBRE NOSOTROS</h3>
+                <a href="#">Nuestra historia</a>
+                <a href="#">Blog</a>
+                <a href="#">Trabaja con nosotros</a>
+                <a href="#">Contacto</a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- Barra de logos de seguridad -->
+        <div class="footer-security">
+
+            <div class="security-badge">
+                <span class="security-label">Sitio Seguro</span>
+                <img src="img/descarga.jpg"
+                    alt="PCI DSS" class="security-logo">
+            </div>
+
+            <div class="security-badge">
+                <span class="security-label">Vigilado</span>
+                <img src="img/64b0bd2342706.r_d.692-141-0.jpeg"
+                    alt="Superintendencia de Industria y Comercio" class="security-logo">
+            </div>
+
+            <div class="security-badge">
+                <span class="security-label">Powered by</span>
+                <img src="img/infracommerce-latam.png"
+                    alt="Infracommerce" class="security-logo">
+            </div>
+
+            <div class="security-badge">
+                <span class="security-label">Technology</span>
+                <img src="img/Vtex.jpg" alt="VTEX"
+                    class="security-logo">
+            </div>
+
+        </div>
+
+    </footer>
 
 </body>
 

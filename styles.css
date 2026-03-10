@@ -12,30 +12,99 @@ body {
 
 /* HEADER */
 header {
-    text-align: center;
-    padding: 30px 0;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    padding: 30px 10%;
+    background: #1a1a2e;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes goldShimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes subtitleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: translateY(-2px);
+        opacity: 1;
+    }
 }
 
 header h1 {
-    font-size: 32px;
+    font-size: 38px;
     font-weight: 700;
-    margin-bottom: 15px;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+/* Solo "Hollywood" tiene el efecto dorado */
+header h1 span.gold {
+    background: linear-gradient(270deg,
+            #ffffff,
+            #f5c842,
+            #e8a800,
+            #fff8dc,
+            #ffffff);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: goldShimmer 5s ease infinite;
+}
+
+header h1 span.subtitle {
+    display: block;
+    font-size: 15px;
+    font-weight: 300;
+    color: #a0b8a8;
+    -webkit-text-fill-color: #a0b8a8;
+    letter-spacing: 1px;
+    margin-top: 6px;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    animation: subtitleFloat 4s ease-in-out infinite;
+}
+
+nav {
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 14px;
 }
 
 nav a {
-    margin: 0 15px;
+    margin: 0 15px 0 0;
     text-decoration: none;
-    color: #555;
+    color: #7a9e8a;
     font-weight: 500;
-    transition: 0.3s ease;
+    font-size: 14px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    letter-spacing: 0.3px;
 }
 
 nav a:hover,
 nav .active {
-    color: #2f5aa8;
-    border-bottom: 2px solid #2f5aa8;
+    color: #dcf4e5;
+    border-bottom: 2px solid #c9e9d5;
+    padding-bottom: 2px;
 }
 
 /* GRID */
@@ -102,14 +171,462 @@ nav .active {
     transition: all 0.4s ease;
 }
 
-/* Animación hover */
+/* Animación hover hacia verde estilo WhatsApp */
 .btn-wsp:hover {
-    background: linear-gradient(135deg, #1d3f7a, #2f5aa8);
+    background: linear-gradient(135deg, #128C7E, #25D366);
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(47, 90, 168, 0.4);
+    box-shadow: 0 5px 18px rgba(37, 211, 102, 0.45);
 }
 
 /* Efecto al hacer click */
 .btn-wsp:active {
     transform: scale(0.95);
+}
+
+.footer {
+    background: #f5f5f5;
+    padding: 60px 10%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Redes sociales */
+.footer-social {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.footer-social h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 22px;
+}
+
+.social-icons a {
+    color: #444;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #25D366;
+    transform: scale(1.2);
+}
+
+/* línea divisoria */
+
+.footer hr {
+    margin: 40px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+/* columnas */
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.footer-col h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-col h4 {
+    margin-top: 20px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-col a {
+    display: block;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: #25D366;
+}
+
+/* Barra de logos de seguridad */
+.footer-security {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 20px 0 10px;
+}
+
+.security-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.security-label {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.security-logo {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(20%);
+    opacity: 0.85;
+    transition: opacity 0.3s, filter 0.3s;
+}
+
+.security-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+/* ── POPUP COMBO ─────────────────────────────────────────── */
+@keyframes popupIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.88) translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes popupOut {
+    0% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.88) translateY(30px);
+    }
+}
+
+@keyframes overlayIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 20, 0.72);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: overlayIn 0.4s ease forwards;
+}
+
+.popup-overlay.closing {
+    animation: overlayIn 0.35s ease reverse forwards;
+}
+
+.popup-box {
+    width: 800px;
+    max-width: 95vw;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    animation: popupIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-box.closing {
+    animation: popupOut 0.35s ease forwards;
+}
+
+/* Franja superior oscura */
+.popup-header {
+    background: #1a1a2e;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popup-header .combo-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f5c842;
+}
+
+.popup-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 20px;
+    transition: background 0.25s, color 0.25s, transform 0.25s;
+}
+
+.popup-close:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+/* Carrusel de imágenes */
+.popup-slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: #0d0d1a;
+}
+
+.popup-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: scale(1.04);
+}
+
+.popup-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.popup-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popup-slide-tag {
+    position: absolute;
+    bottom: 14px;
+    left: 18px;
+    background: rgba(26, 26, 46, 0.82);
+    color: #f5c842;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+/* Dots */
+.popup-dots {
+    position: absolute;
+    bottom: 14px;
+    right: 18px;
+    display: flex;
+    gap: 6px;
+}
+
+.popup-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.popup-dot.active {
+    background: #f5c842;
+    transform: scale(1.3);
+}
+
+/* Cuerpo del popup */
+.popup-body {
+    padding: 28px 36px 32px;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.popup-text {
+    flex: 1;
+}
+
+.popup-text h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+    line-height: 1.25;
+}
+
+.popup-text h2 em {
+    font-style: normal;
+    background: linear-gradient(270deg, #e8a800, #f5c842, #fff8dc, #f5c842, #e8a800);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: goldShimmer 4s ease infinite;
+}
+
+.popup-text p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.popup-items {
+    list-style: none;
+    margin-bottom: 18px;
+}
+
+.popup-items li {
+    font-size: 13px;
+    color: #444;
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.popup-items li::before {
+    content: '✦';
+    color: #f5c842;
+    font-size: 10px;
+}
+
+/* Precio + CTA */
+.popup-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    min-width: 160px;
+}
+
+.popup-price-box {
+    text-align: right;
+}
+
+.popup-price-old {
+    font-size: 13px;
+    color: #bbb;
+    text-decoration: line-through;
+    font-family: 'Poppins', sans-serif;
+}
+
+.popup-price-new {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1;
+}
+
+.popup-badge {
+    background: #f5c842;
+    color: #1a1a2e;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+.popup-btn-wsp {
+    width: 100%;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.popup-btn-wsp:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 22px rgba(37, 211, 102, 0.5);
+}
+
+.popup-btn-wsp:active {
+    transform: scale(0.97);
+}
+
+@media (max-width: 600px) {
+    .popup-body {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .popup-cta {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .popup-price-box {
+        text-align: left;
+    }
 }
